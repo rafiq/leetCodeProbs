@@ -17,6 +17,18 @@ var halvesAreAlike = function(s) {
     console.log(a);
     console.log(b);
 
+    var halvesAreAlike = function(s) {
+      let a = [];
+      let b = [];
+      let vowels = /aeiouAEIOU/g;
+      let firstWordCount = [];
+      let secondWordCount = [];
+
+      a.concat(s.slice(0, s.length / 2));
+      b.concat(s.slice(s.length / 2, s.length));
+
+        console.log(a);
+        console.log(b);
   // firstWordCount.push(a.match(vowels));
   // secondWordCount.push(b.match(vowels));
 
