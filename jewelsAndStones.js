@@ -1,13 +1,37 @@
-// You're given strings jewels representing the types of stones that are jewels, and stones representing the stones you have. Each character in stones is a type of stone you have. You want to know how many of the stones you have are also jewels.
+// Checking for IP
 
-// Letters are case sensitive, so "a" is considered a different type of stone from "A".
 
-/**
- * @param {string} jewels
- * @param {string} stones
- * @return {number}
- */
-var numJewelsInStones = function(jewels, stones) {
+
+check if units are between 0-255
+
+check if less than four units.
+check if more than four units
+
+function isDotSeparatedIpAddress(inputString) {
+  let dotSeparatedWords = inputString.split(".");
+  while (dotSeparatedWords.length > 0) {
+    let word = dotSeparatedWords.pop();
+    if (!isAnIpNumber(word)) {
+      console.log(false);
+      break;
+    } else if()
+  }
+
+  return true;
+}
+
+
+
+// // You're given strings jewels representing the types of stones that are jewels, and stones representing the stones you have. Each character in stones is a type of stone you have. You want to know how many of the stones you have are also jewels.
+
+// // Letters are case sensitive, so "a" is considered a different type of stone from "A".
+
+// /**
+//  * @param {string} jewels
+//  * @param {string} stones
+//  * @return {number}
+//  */
+// var numJewelsInStones = function(jewels, stones) {
   // let jewelsCodes = "";
   // let stonesCodes = "";
   // let count = 0;
