@@ -1,0 +1,76 @@
+/**
+ * // Definition for a Node.
+ * function Node(val, left, right) {
+ *      this.val = val;
+ *      this.left = left;
+ *      this.right = right;
+ *  };
+ */
+
+/**
+ * @param {Node} root
+ * @return {Node}
+ */
+var treeToDoublyList = function(root) {
+    /**
+     * start from root and add a return route down the left and right side down every node
+     *  do an in order traversal
+     *
+     * when we get to null break
+     */
+
+
+    if (!root) return
+    let curr = root
+    while (curr) {
+        curr.left.parent = curr
+        curr.right.parent = curr
+        curr = curr.left
+    }
+    while (curr) {
+        curr.left.parent = curr
+        curr.right.parent = curr
+        curr = curr.right
+    }
+
+    let l = root
+    let r = root
+
+
+
+    // should be O( n)
+
+    // space O (H)
+// Perform inorder traversal
+// Keep track of prev node and cur node
+// prev node's right will point to cur node and
+// cur node's left will point to prev node
+var treeToDoublyList = function(root) {
+    if (!root) {
+        return null;
+    }
+    let head = null, prev = null, cur = null;
+    dfsTraversal(root);
+    // At the end of traversal, cur is pointing to the tail node
+    head.left = cur;
+    cur.right = head;
+    return head;
+    // T.C: O(N)
+    // S.C: O(H)
+    function dfsTraversal(root) {
+        if (!root) {
+            return;
+        }
+        dfsTraversal(root.left);
+        if (!head) {
+            head = root;
+        }
+        prev = cur;
+        cur = root;
+        if (prev) prev.right = cur;
+        if (cur) cur.left = prev;
+        dfsTraversal(root.right);
+    }
+};
+};
+
